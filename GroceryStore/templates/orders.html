@@ -1,0 +1,48 @@
+
+{% extends 'userbase.html' %}
+{% block style %}
+
+.content {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 100px;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+{% endblock %}
+{% block content %}
+
+<div class="content">
+<div class="container mt-5">
+    <h2 class="text-center">Orders</h2>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th style="background: greenyellow;">Product</th>
+                <th style="background: greenyellow;">Price</th>
+                <th style="background: greenyellow;">Quantity</th>
+                <th style="background: greenyellow;">Purchased On</th>
+                <th style="background: greenyellow;">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in orders|reverse %}
+                <tr>
+                    <td>{{ product.o_name }}</td>
+                    <td><i class="bi bi-currency-rupee"></i>{{ product.price }}{{ product.unit }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.date }}</td>
+                    <td>{{ product.price * product.quantity }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+</div>
+
+{% endblock %}

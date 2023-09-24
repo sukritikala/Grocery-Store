@@ -1,0 +1,57 @@
+
+{% extends 'adminbase.html' %}
+{% block style %}
+
+.signup-container {
+    background-color: #f7f7f7; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 signup-container">
+            <h2 class="text-center">Add Product</h2>
+
+            <form action="/addproduct?id={{category.c_id}}" method="post">
+                <div class="mb-3">
+                    <label for="categoryName" class="form-label">Category Name</label>
+                    <input type="text" class="form-control" name="category" placeholder="{{category.c_name}}" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="productName" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" name="product" placeholder="Enter product name" required max="50">
+                </div>
+                <div class="mb-3">
+                    <label for="stock" class="form-label">Stock</label>
+                    <input type="number" class="form-control" name="stock" placeholder="Enter stock" required min="0">
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" name="price" placeholder="Enter price" required min="0">
+                </div>
+                <div class="mb-3">
+                    <label for="unit" class="form-label">Unit</label>
+                    <select class="form-select" name="unit" required>
+                        <option value="/kg">Kilogram </option>
+                        <option value="/gm">Gram</option>
+                        <option value="/liter">Liter</option>
+                        <option value="/ml">Milliliter</option>
+                        <option value="/unit">Unit</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add Product</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

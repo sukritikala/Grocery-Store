@@ -1,0 +1,26 @@
+
+{% extends 'homebase.html' %}
+{% block style %}
+
+{% endblock %}
+{% block content %}
+
+
+<div class="content" style="display: flex; flex-direction: column; align-items: center; margin-top: 100px;">
+
+    <p style="font-weight: bold; font-family: Serif, sans-serif; font-size: 40px; margin-bottom: 50px;">
+        Welcome to the GroceryStore
+    </p>
+    <p>
+        <a href="/user/login">
+            <button type="button" class="btn btn-primary">User Login</button>
+        </a>
+    </p>
+    <p>
+        <a href="/admin/login">
+            <button type="button" class="btn btn-primary">Admin Login</button>
+        </a>
+    </p>
+</div>
+
+{% endblock %}

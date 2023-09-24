@@ -1,0 +1,36 @@
+
+{% extends 'adminbase.html' %}
+{% block style %}
+
+.signup-container {
+    background-color: #f7f7f7; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+{% endblock %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 signup-container">
+            <h2 class="text-center">Update Category</h2>
+
+            <form action="/editcategory?id={{category.c_id}}" method="post">
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category Name</label>
+                    <input type="text" class="form-control" name="category" value="{{category.c_name}}" required max="50">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Update</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

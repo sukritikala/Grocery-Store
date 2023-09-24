@@ -1,0 +1,28 @@
+{% extends 'homebase.html' %}
+{% block content %}
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 signup-container">
+                <h2 class="text-center">User Login</h2>
+
+                <form action="/user/login" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Enter your email" required max="50">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter your password" required min="4" max="10" >
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <hr>
+                    <span style="margin-left: 70px;">
+                        Don't have an account?, <a href="/user/signup" style="text-decoration:none">SignUp</a>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
